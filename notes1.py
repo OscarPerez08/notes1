@@ -92,6 +92,38 @@ def menu_usuario(usuario):
                 break
             else:
                 print("Por favor, selecciona una opción válida.")
-=======
+
+#us003
+# Crear un nuevo curso
+def crear_curso(usuario):
+    print("\n--- Crear Curso ---")
+    nombre_curso = input("Nombre del curso: ")
+
+    if nombre_curso in cursos[usuario]:
+        print("El curso ya está registrado.")
+    else:
+        cursos[usuario].append(nombre_curso)
+        notas[nombre_curso] = {}  # Inicializamos un diccionario para las notas del curso
+        print(f"Curso '{nombre_curso}' creado con éxito.")
+
+# Registrar una nota (solo para profesores)
+def registrar_nota(usuario):
+    print("\n--- Registrar Nota ---")
+    nombre_curso = input("Nombre del curso: ")
+
+    if nombre_curso in cursos[usuario]:
+        estudiante = input("Nombre del estudiante: ")
+        nota = input("Nota: ")
+        if estudiante not in usuarios or roles[estudiante] != "estudiante":
+            print("El estudiante no está registrado.")
+        else:
+            if nombre_curso not in notas:
+                notas[nombre_curso] = {}
+            notas[nombre_curso][estudiante] = nota  # Asignamos la nota al estudiante
+            print(f"Nota registrada para el estudiante '{estudiante}' en el curso '{nombre_curso}'.")
+    else:
+        print("El curso no está registrado.")                 
+
             print("Rol no válido. El usuario no se ha registrado.")
+
 
