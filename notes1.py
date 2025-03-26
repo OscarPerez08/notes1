@@ -123,3 +123,7 @@ def registrar_nota(usuario):
             print(f"Nota registrada para el estudiante '{estudiante}' en el curso '{nombre_curso}'.")
     else:
         print("El curso no está registrado.")                 
+
+            print("Rol no válido. El usuario no se ha registrado.")
+
+
