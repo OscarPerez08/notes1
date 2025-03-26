@@ -92,3 +92,6 @@ def menu_usuario(usuario):
                 break
             else:
                 print("Por favor, selecciona una opción válida.")
+=======
+            print("Rol no válido. El usuario no se ha registrado.")
+
